@@ -1,5 +1,5 @@
 public with sharing class ReparentService {
-	public ReparentService(ReparentParams params) {
+  public ReparentService(ReparentParams params) {
     this.accountMap = new Map<String, Account>();
     this.params = params;
   }
