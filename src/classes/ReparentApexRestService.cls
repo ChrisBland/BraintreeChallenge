@@ -6,9 +6,8 @@ global with sharing class ReparentApexRestService {
     RestRequest req = RestContext.request;
     ReparentParams params = (ReparentParams)JSON.deserialize(req.requestbody.toString(), ReparentParams.class);
     if(params.isValid()){
-      
-    }else{
-      return false;
+      ReparentService service = new ReparentService(params);
+      return service.run();
     }
     return false;
   }
